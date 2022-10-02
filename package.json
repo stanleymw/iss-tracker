@@ -1,0 +1,23 @@
+{
+  "name": "iss-tracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "firefox index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stanleymw/iss-tracker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stanleymw/iss-tracker/issues"
+  },
+  "homepage": "https://github.com/stanleymw/iss-tracker#readme",
+  "dependencies": {
+    "satellite.js": "^4.1.4"
+  }
+}

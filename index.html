@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISS Tracking</title>
+    <link rel="stylesheet" href="main.css">
+    <p style="background-image: url('IssBackground.png');"></p>
+  </head>
+  <body>
+    <body class="light-theme"></body>
+    <div class="topnav1">
+        <img src="IssTitle.png" alt="Iss Title">
+    </div>
+    <div class="topnav">
+        <a class="active" href="index.html">Home</a>
+        <a href="indexnews.html">News</a>
+        <a href="indexabout.html">About</a>
+    </div>
+    <style>
+        body {
+          background-image: url('space-nebula-nvidia-recorded.webp');
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-size: cover;
+        }
+    </style>
+    <head>
+      <meta charset="utf-8">
+      <!-- Include the CesiumJS JavaScript and CSS files -->
+      <script src="https://cesium.com/downloads/cesiumjs/releases/1.97/Build/Cesium/Cesium.js"></script>
+      <link href="https://cesium.com/downloads/cesiumjs/releases/1.97/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+    </head>
+    <body>
+      <div id="cesiumContainer"></div>
+      <!-- Import Satellite Functions -->
+      <script src="node_modules/satellite.js/dist/satellite.min.js"></script>
+
+      <!-- Cesium Creation -->
+      <script src="app.js"></script>
+     </div>
+    </body>
+    <p id="msg">Using CesiumJS</p>
+    <a href="https://cesium.com/platform/cesiumjs/">Cesium</a>
+    <!-- <script src="app.js"></script> -->
+    <noscript>You need to enable JavaScript to view the full site.</noscript>
+  </body>
+</html>
