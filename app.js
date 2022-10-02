@@ -50,6 +50,12 @@ async function startPropagator() {
         // console.log(longitudeDeg, latitudeDeg, position.height, position)
         // height is in kilometers, so we have to convert it to meters
         iss.position = Cesium.Cartesian3.fromDegrees(longitudeDeg, latitudeDeg, position.height*1000)
+        iss.description = `
+            <h1>Information</h1>
+            <p>Longitude: ${longitudeDeg} Degrees</p>
+            <p>Latitude: ${latitudeDeg} Degrees</p>
+            <p>Altitude: ${position.height} Kilometers</p>
+        `
         if (!set) {
             viewer.flyTo(iss)
             set = true;
