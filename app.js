@@ -1,11 +1,14 @@
 Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIzYWM1OWFiYy1kYWY0LTQzZWMtYjhlMi0xZjNhOTcyM2UzZDQiLCJpZCI6MTA5ODczLCJpYXQiOjE2NjQ2Njg2NzB9.1eB8sr4t44U6BmM4F_19IQVdVLOZEXS10gw-y47LB2I';
 
 const viewer = new Cesium.Viewer('cesiumContainer', {
-    terrainProvider: Cesium.createWorldTerrain()
+    terrainProvider: Cesium.createWorldTerrain(),
 });    
 const buildingTileset = viewer.scene.primitives.add(Cesium.createOsmBuildings());  
 
-
+/**
+ * @param {String} name name of the entity
+ * @param {String} description description of the entity
+ */
 function createEntity(longitude, latitude, height, name, description) {
     let pointEntity = viewer.entities.add({
         name: name,
@@ -32,8 +35,11 @@ let satrec = satellite.twoline2satrec(tleLine1, tleLine2);
 // var longitudeDeg = satellite.degreesLong(position.longitude),
 //     latitudeDeg  = satellite.degreesLat(position.latitude);
 // console.log(longitudeDeg, latitudeDeg, position.height, position)
-let iss = createEntity(0, 0, 0, "International Space Station", `Space Station`)
-let set = false;
+let iss = createEntity(0, 0, 0, "International Space Station", `
+             <h1>Information</h1>
+            <p>Longitude: 0 Degrees</p>
+            <p>Latitude: 0 Degrees</p>
+            <p>Altitude: 0 Kilometers</p>`)
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
@@ -56,11 +62,6 @@ async function startPropagator() {
             <p>Latitude: ${latitudeDeg} Degrees</p>
             <p>Altitude: ${position.height} Kilometers</p>
         `
-        if (!set) {
-            viewer.flyTo(iss)
-            set = true;
-        }
-        
         // console.log("MODIFIED ENTITY",iss)
         await sleep(1)
     }
